@@ -11423,6 +11423,11 @@ body {
   color: #fff;
 }
 
+#img-hover :hover{
+  border: 1px solid #777;
+  scale: 101%;
+}
+
 .footer {
   padding: 5rem 0;
 }
