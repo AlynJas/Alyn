@@ -11247,6 +11247,115 @@ body {
     border-left: 0.5rem solid #a16468; /*Chang colour side Img(Red)*/
   }
 }
+
+/* PALETTE COLOUR */
+
+@media (min-width: 992px) {
+  .projects-section .featuredpl1-text {
+    /* เราจะลบ border-left หรือ background-image เก่าออกไป */
+    border-left: none; 
+    background-image: none;
+
+    /* กำหนดตำแหน่งให้เป็น relative เพื่อให้ pseudo-element อ้างอิงได้ */
+    position: relative; 
+    
+    /* คง padding-left เดิมไว้ เพื่อให้เนื้อหาไม่ทับกับแถบสี */
+    padding: 0 0 0 2rem; 
+    
+    /* * สำคัญ: กำหนด overflow เป็น hidden เพื่อซ่อนส่วนเกิน 
+       * หากแถบสีที่สร้างขึ้นมาเกินขนาดของ .featuredp-text
+       */
+    overflow: hidden;
+  }
+
+  /* สร้าง Pseudo-element ::before เพื่อใช้เป็นแถบสี */
+  .projects-section .featuredpl1-text::before {
+    content: ""; /* ต้องมี content เพื่อให้แสดงผล */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.5rem; /* กำหนดความกว้างของแถบสีรวม (เท่ากับ border-left เดิม) */
+    height: 100%; /* ให้สูงเท่ากับความสูงของ div แม่ (.featuredp-text) */
+    
+    /* สร้างแถบสีด้วย linear-gradient ที่มีสีทึบเรียงกัน */
+    background-image: linear-gradient(
+      to bottom,
+      #D9251D 0%,     /* สีม่วง 0% ถึง 25% ของความสูง */
+      #D9251D 25%,
+      #C75D56 25%,     /* สีเขียว 25% ถึง 50% ของความสูง */
+      #C75D56 50%,
+      #F0DBC0 50%,     /* สีฟ้า 50% ถึง 75% ของความสูง */
+      #F0DBC0 75%,
+      #F5B92D 75%,     /* สีเหลือง 75% ถึง 100% ของความสูง */
+      #F5B92D 100%
+    );
+
+    /* หรือถ้าต้องการให้แต่ละสีมีสัดส่วนเท่ากัน คุณสามารถใช้แบบนี้ได้ง่ายกว่า: */
+    /*
+    background-image: repeating-linear-gradient(
+      to bottom,
+      #7464a1 0%, #7464a1 25%, /* ม่วง 25% */
+      /* #64a19d 25%, #64a19d 50%, เขียว 25% */
+      /* #1cabc4 50%, #1cabc4 75%, ฟ้า 25% */
+      /* #e4c662 75%, #e4c662 100% เหลือง 25% */
+    /* ); */
+
+    /* หรือถ้าอยากให้แถบเล็กๆ ซ้อนกันเยอะๆ */
+    /*
+    background-image: linear-gradient(
+      to bottom,
+      #7464a1 0%, #7464a1 25%, 
+      #64a19d 25%, #64a19d 50%, 
+      #1cabc4 50%, #1cabc4 75%, 
+      #e4c662 75%, #e4c662 100%
+    );
+    background-size: 100% 100%; /* ให้ขนาดเท่ากับ ::before */
+  }
+}
+/* โค้ดนี้สำหรับวางทับของเดิมที่เกี่ยวข้องกับ .projects-section .featuredp-text */
+
+@media (min-width: 992px) {
+  .projects-section .featuredpl2-text {
+    /* เราจะลบ border-left หรือ background-image เก่าออกไป */
+    border-left: none; 
+    background-image: none;
+
+    /* กำหนดตำแหน่งให้เป็น relative เพื่อให้ pseudo-element อ้างอิงได้ */
+    position: relative; 
+    
+    /* คง padding-left เดิมไว้ เพื่อให้เนื้อหาไม่ทับกับแถบสี */
+    padding: 0 0 0 2rem; 
+    
+    /* * สำคัญ: กำหนด overflow เป็น hidden เพื่อซ่อนส่วนเกิน 
+       * หากแถบสีที่สร้างขึ้นมาเกินขนาดของ .featuredp-text
+       */
+    overflow: hidden;
+  }
+
+  /* สร้าง Pseudo-element ::before เพื่อใช้เป็นแถบสี */
+  .projects-section .featuredpl2-text::before {
+    content: ""; /* ต้องมี content เพื่อให้แสดงผล */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.5rem; /* กำหนดความกว้างของแถบสีรวม (เท่ากับ border-left เดิม) */
+    height: 100%; /* ให้สูงเท่ากับความสูงของ div แม่ (.featuredp-text) */
+    
+    /* สร้างแถบสีด้วย linear-gradient ที่มีสีทึบเรียงกัน */
+    background-image: linear-gradient(
+      to bottom,
+      #FCE8A1 0%,     
+      #FCE8A1 25%,
+      #DCE0E6 25%,    
+      #DCE0E6 50%,
+      #5B6C8A 50%,     
+      #5B6C8A 75%,
+      #0B0A10 75%,     
+      #0B0A10 100%
+    );
+  }
+}
+
 .projects-section .project-text {
   padding: 3rem;
   font-size: 90%;
