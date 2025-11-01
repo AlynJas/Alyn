@@ -11067,6 +11067,100 @@ body {
   border: 0;
 }
 
+/* Wipe Up Animation */
+@keyframes wipeUp {
+  from {
+    opacity: 0;
+    transform: translateY(70px); /* Start from below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);   /* END at default pos */
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05); /* Scale up 5% */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* wipeUp Animation */
+#masthead-title {
+  opacity: 0; 
+  animation-name: wipeUp;
+  animation-duration: 2.0s; 
+  animation-timing-function: ease-out; 
+  
+  animation-fill-mode: forwards;
+}
+
+/*pulse Animation */
+#masthead-button {
+  animation-name: pulse;
+  animation-duration: 2.5s; 
+  animation-timing-function: ease-in-out; 
+
+  animation-delay: 1.2s;
+  /* infinite */
+  animation-iteration-count: infinite;
+}
+
+.masthead1 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 15rem 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/home.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.masthead1 h1, .masthead1 .h1 {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.masthead1 h2, .masthead1 .h2 {
+  max-width: 20rem;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .masthead1 h1, .masthead1 .h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  .masthead1 {
+    height: 100vh;
+    padding: 0;
+  }
+  .masthead1 h1, .masthead1 .h1 {
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.8rem;
+  }
+  .masthead1 h2, .masthead1 .h2 {
+    max-width: 30rem;
+    font-size: 1.25rem;
+  }
+}
+
 .masthead {
   position: relative;
   width: 100%;
